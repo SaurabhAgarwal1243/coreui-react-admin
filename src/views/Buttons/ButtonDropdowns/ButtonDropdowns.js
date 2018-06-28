@@ -1,290 +1,373 @@
-import React, { Component } from 'react';
-import { Button, ButtonDropdown, Card, CardBody, CardHeader, Col, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'reactstrap';
+import React,{ Component }from 'react'
+import axios from 'axios'
+import {
+  Badge,
+  Button,
+  ButtonDropdown,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Col,
+  Collapse,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Fade,
+  Form,
+  FormGroup,
+  FormText,
+  FormFeedback,
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  Label,
+  Row,
+} from 'reactstrap';
 
+//import { ButtonDropdowns } from '..';
 class ButtonDropdowns extends Component {
+  constructor(){
+    super()
 
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
     this.state = {
-      dropdownOpen: new Array(19).fill(false),
-    };
+      Name: "",
+      Status: "",
+      Logo: "",
+      Url: "",
+      redirectTo: null
+
+    }
+
+  }
+  handleSubmit(event){
+    event.preventDefault()
+    console.log('handle form submit:')
+
+    axios
+      .post('/Advertisement', {
+        Name: this.state.Name,
+        Status: this.state.Status,
+        Logo: this.state.Logo,
+        Url: this.state.Url
+      })
+      .then()
   }
 
-  toggle(i) {
-    const newArray = this.state.dropdownOpen.map((element, index) => { return (index === i ? !element : false); });
-    this.setState({
-      dropdownOpen: newArray,
-    });
-  }
-
-  render() {
+  render(){
     return (
-      <div className="animated fadeIn">
-        <Row>
-          <Col xs="12">
-            <Card>
+      <div>
+        <Card>
               <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Button Dropdown</strong>
-                <div className="card-header-actions">
-                  <a href="https://reactstrap.github.io/components/button-dropdown/" rel="noreferrer noopener" target="_blank" className="card-header-action">
-                    <small className="text-muted">docs</small>
-                  </a>
-                </div>
+                <strong>New Advertisement Form</strong>
               </CardHeader>
               <CardBody>
-                <ButtonDropdown isOpen={this.state.dropdownOpen[0]} toggle={() => { this.toggle(0); }}>
-                  <DropdownToggle caret>
-                    Button Dropdown
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
+                <Form action="" method="post" encType="multipart/form-data" className="form-horizontal">
+                  {/* <FormGroup row>
+                    <Col md="3">
+                      <Label>Static</Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <p className="form-control-static">Username</p>
+                    </Col>
+                  </FormGroup> */}
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="text-input">Name</Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <Input type="text" id="text-input" name="text-input" placeholder="Name" />
+                      <FormText color="muted">Enter name for Advertisement</FormText>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="email-input">URL</Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <Input type="text" id="email-input" name="email-input" placeholder="URL" autoComplete="email"/>
+                      <FormText className="help-block">Enter the URL for the Advertisement</FormText>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="password-input">Status</Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <Input type="Text" id="password-input" name="password-input" placeholder="Status" autoComplete="new-password" />
+                      <FormText className="help-block">Mention the Status of Advertisement</FormText>
+                    </Col>
+                  </FormGroup>
+                  {/* <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="date-input">Date Input <Badge>NEW</Badge></Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <Input type="date" id="date-input" name="date-input" placeholder="date" />
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="disabled-input">Disabled Input</Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <Input type="text" id="disabled-input" name="disabled-input" placeholder="Disabled" disabled />
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="textarea-input">Textarea</Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <Input type="textarea" name="textarea-input" id="textarea-input" rows="9"
+                             placeholder="Content..." />
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="select">Select</Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <Input type="select" name="select" id="select">
+                        <option value="0">Please select</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                      </Input>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="selectLg">Select Large</Label>
+                    </Col>
+                    <Col xs="12" md="9" size="lg">
+                      <Input type="select" name="selectLg" id="selectLg" bsSize="lg">
+                        <option value="0">Please select</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                      </Input>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="selectSm">Select Small</Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <Input type="select" name="selectSm" id="SelectLm" bsSize="sm">
+                        <option value="0">Please select</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                        <option value="4">Option #4</option>
+                        <option value="5">Option #5</option>
+                      </Input>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="disabledSelect">Disabled Select</Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <Input type="select" name="disabledSelect" id="disabledSelect" disabled autoComplete="name">
+                        <option value="0">Please select</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                      </Input>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="multiple-select">Multiple select</Label>
+                    </Col>
+                    <Col md="9">
+                      <Input type="select" name="multiple-select" id="multiple-select" multiple>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                        <option value="4">Option #4</option>
+                        <option value="5">Option #5</option>
+                        <option value="6">Option #6</option>
+                        <option value="7">Option #7</option>
+                        <option value="8">Option #8</option>
+                        <option value="9">Option #9</option>
+                        <option value="10">Option #10</option>
+                      </Input>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label>Radios</Label>
+                    </Col>
+                    <Col md="9">
+                      <FormGroup check className="radio">
+                        <Input className="form-check-input" type="radio" id="radio1" name="radios" value="option1" />
+                        <Label check className="form-check-label" htmlFor="radio1">Option 1</Label>
+                      </FormGroup>
+                      <FormGroup check className="radio">
+                        <Input className="form-check-input" type="radio" id="radio2" name="radios" value="option2" />
+                        <Label check className="form-check-label" htmlFor="radio2">Option 2</Label>
+                      </FormGroup>
+                      <FormGroup check className="radio">
+                        <Input className="form-check-input" type="radio" id="radio3" name="radios" value="option3" />
+                        <Label check className="form-check-label" htmlFor="radio3">Option 3</Label>
+                      </FormGroup>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label>Inline Radios</Label>
+                    </Col>
+                    <Col md="9">
+                      <FormGroup check inline>
+                        <Input className="form-check-input" type="radio" id="inline-radio1" name="inline-radios" value="option1" />
+                        <Label className="form-check-label" check htmlFor="inline-radio1">One</Label>
+                      </FormGroup>
+                      <FormGroup check inline>
+                        <Input className="form-check-input" type="radio" id="inline-radio2" name="inline-radios" value="option2" />
+                        <Label className="form-check-label" check htmlFor="inline-radio2">Two</Label>
+                      </FormGroup>
+                      <FormGroup check inline>
+                        <Input className="form-check-input" type="radio" id="inline-radio3" name="inline-radios" value="option3" />
+                        <Label className="form-check-label" check htmlFor="inline-radio3">Three</Label>
+                      </FormGroup>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3"><Label>Checkboxes</Label></Col>
+                    <Col md="9">
+                      <FormGroup check className="checkbox">
+                        <Input className="form-check-input" type="checkbox" id="checkbox1" name="checkbox1" value="option1" />
+                        <Label check className="form-check-label" htmlFor="checkbox1">Option 1</Label>
+                      </FormGroup>
+                      <FormGroup check className="checkbox">
+                        <Input className="form-check-input" type="checkbox" id="checkbox2" name="checkbox2" value="option2" />
+                        <Label check className="form-check-label" htmlFor="checkbox2">Option 2</Label>
+                      </FormGroup>
+                      <FormGroup check className="checkbox">
+                        <Input className="form-check-input" type="checkbox" id="checkbox3" name="checkbox3" value="option3" />
+                        <Label check className="form-check-label" htmlFor="checkbox3">Option 3</Label>
+                      </FormGroup>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label>Inline Checkboxes</Label>
+                    </Col>
+                    <Col md="9">
+                      <FormGroup check inline>
+                        <Input className="form-check-input" type="checkbox" id="inline-checkbox1" name="inline-checkbox1" value="option1" />
+                        <Label className="form-check-label" check htmlFor="inline-checkbox1">One</Label>
+                      </FormGroup>
+                      <FormGroup check inline>
+                        <Input className="form-check-input" type="checkbox" id="inline-checkbox2" name="inline-checkbox2" value="option2" />
+                        <Label className="form-check-label" check htmlFor="inline-checkbox2">Two</Label>
+                      </FormGroup>
+                      <FormGroup check inline>
+                        <Input className="form-check-input" type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3" />
+                        <Label className="form-check-label" check htmlFor="inline-checkbox3">Three</Label>
+                      </FormGroup>
+                    </Col>
+                  </FormGroup> */}
+                  <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="file-input">File input</Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <Input type="file" id="file-input" name="file-input" />
+                    </Col>
+                  </FormGroup>
+                    {/* <FormGroup row>
+                    <Col md="3">
+                      <Label htmlFor="file-multiple-input">Multiple File input</Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <Input type="file" id="file-multiple-input" name="file-multiple-input" multiple />
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row hidden>
+                    <Col md="3">
+                      <Label className="custom-file" htmlFor="custom-file-input">Custom file input</Label>
+                    </Col>
+                    <Col xs="12" md="9">
+                      <Label className="custom-file">
+                        <Input className="custom-file" type="file" id="custom-file-input" name="file-input" />
+                        <span className="custom-file-control"></span>
+                      </Label>
+                    </Col>
+                  </FormGroup> */}
+                </Form>
               </CardBody>
+              <CardFooter>
+                <Button type="submit" size="sm" color="primary"><i className="fa fa-dot-circle-o"></i> Submit</Button>
+                <Button type="reset" size="sm" color="danger"><i className="fa fa-ban"></i> Reset</Button>
+              </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Single button dropdowns</strong>
-              </CardHeader>
-              <CardBody>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[1]} toggle={() => { this.toggle(1); }}>
-                  <DropdownToggle caret color="primary">
-                    Primary
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[2]} toggle={() => { this.toggle(2); }}>
-                  <DropdownToggle caret color="secondary">
-                    Secondary
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[3]} toggle={() => { this.toggle(3); }}>
-                  <DropdownToggle caret color="success">
-                    Success
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[4]} toggle={() => { this.toggle(4); }}>
-                  <DropdownToggle caret color="info">
-                    Info
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[5]} toggle={() => { this.toggle(5); }}>
-                  <DropdownToggle caret color="warning">
-                    Warning
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[6]} toggle={() => { this.toggle(6); }}>
-                  <DropdownToggle caret color="danger">
-                    Danger
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Split button dropdowns</strong>
-              </CardHeader>
-              <CardBody>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[7]} toggle={() => { this.toggle(7); }}>
-                  <Button id="caret" color="primary">Primary</Button>
-                  <DropdownToggle caret color="primary" />
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[8]} toggle={() => { this.toggle(8); }}>
-                  <Button id="caret" color="secondary">Secondary</Button>
-                  <DropdownToggle caret color="secondary" />
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[9]} toggle={() => { this.toggle(9); }}>
-                  <Button id="caret" color="success">Success</Button>
-                  <DropdownToggle caret color="success" />
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[10]} toggle={() => { this.toggle(10); }}>
-                  <Button id="caret" color="info">Info</Button>
-                  <DropdownToggle caret color="info" />
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[11]} toggle={() => { this.toggle(11); }}>
-                  <Button id="caret" color="warning">Warning</Button>
-                  <DropdownToggle caret color="warning" />
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[12]} toggle={() => { this.toggle(12); }}>
-                  <Button id="caret" color="danger">Danger</Button>
-                  <DropdownToggle caret color="danger" />
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Dropdown directions</strong>
-              </CardHeader>
-              <CardBody>
-                <ButtonDropdown direction="up" className="mr-1" isOpen={this.state.dropdownOpen[15]} toggle={() => { this.toggle(15); }}>
-                  <DropdownToggle caret size="lg">
-                    Direction Up
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown direction="left" className="mr-1" isOpen={this.state.dropdownOpen[16]} toggle={() => { this.toggle(16); }}>
-                  <DropdownToggle caret size="lg">
-                    Direction Left
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown direction="right" className="mr-1" isOpen={this.state.dropdownOpen[17]} toggle={() => { this.toggle(17); }}>
-                  <DropdownToggle caret size="lg">
-                    Direction Right
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[18]} toggle={() => { this.toggle(18); }}>
-                  <DropdownToggle caret size="lg">
-                    Default Down
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Button Dropdown sizing</strong>
-              </CardHeader>
-              <CardBody>
-                <ButtonDropdown className="mr-1" isOpen={this.state.dropdownOpen[13]} toggle={() => { this.toggle(13); }}>
-                  <DropdownToggle caret size="lg">
-                    Large Button
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-                <ButtonDropdown isOpen={this.state.dropdownOpen[14]} toggle={() => { this.toggle(14); }}>
-                  <DropdownToggle caret size="sm">
-                    Small Button
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action Disabled</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </ButtonDropdown>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
+        {/* <form className="form-horizontal">
+          <div className="form-group">
+            <div className="col-1 col-ml-auto">
+              <label className="form-label" htmlFor="Name">Name</label>
+            </div>
+            <div className="col-3 col-mr-auto">
+              <input className="form-input"
+                     type="text"
+                     id="Name"
+                     name="Name"
+                     placeholder="Name"
+              />
+            </div>
+          </div>
+          <div className="form-group">
+            <div className="col-1 col-ml-auto">
+              <label className="form-label" htmlFor="Status">Status </label>
+            </div>
+            <div className="col-3 col-mr-auto">
+              <input className="form-input"
+                     placeholder="Status"
+                     type="text"
+                     name="Status"
+              />
+            </div>
+          </div>
+          <div className="form-group">
+            <div className="col-1 col-ml-auto">
+              <label className="form-label" htmlFor="Logo">Logo </label>
+            </div>
+            <div className="col-3 col-mr-auto">
+              <input className="form-input"
+                     placeholder="Logo"
+                     type="file"
+                     name="Logo"
+              />
+            </div>
+          </div>
+          <div className="form-group">
+            <div className="col-1 col-ml-auto">
+              <label className="form-label" htmlFor="Url">Url </label>
+            </div>
+            <div className="col-3 col-mr-auto">
+              <input className="form-input"
+                     placeholder="Url"
+                     type="text"
+                     name="Url"
+              />
+            </div>
+          </div>
+          <div className="form-group ">
+            <div className="col-7"></div>
+            <button
+              className="btn btn-primary col-1 col-mr-auto"
+
+              onClick={this.handleSubmit.bind(this)}
+              type="submit">Submit</button>
+          </div>
+        </form> */}
       </div>
-    );
+    )
   }
+
 }
 
 export default ButtonDropdowns;

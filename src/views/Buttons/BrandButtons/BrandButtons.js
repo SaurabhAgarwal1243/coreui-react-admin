@@ -1,324 +1,333 @@
-import React, { Component } from 'react';
-import { Button, Card, CardBody, CardHeader, Col, Row } from 'reactstrap';
+import React,{ Component }from 'react'
+import {
+  Badge,
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  Col,
+  Progress,
+  Row,
+  Table,
+  Pagination, PaginationItem, PaginationLink,
+} from 'reactstrap';
 
-class BrandButtons extends Component {
+class BrandButton extends Component {
+
   render() {
+
+
     return (
       <div className="animated fadeIn">
         <Row>
-          <Col xs="12">
+        <Col>
             <Card>
               <CardHeader>
-                <i className="fa fa-align-justify"></i>
-                <strong>Brand Button</strong>
-                <small> Usage ex. </small>
-                <code>
-                  &lt;Button className="btn-facebook btn-brand"&gt;&lt;i className="fa fa-facebook"&gt;&lt;/i&gt;&lt;span&gt;Facebook&lt;/span&gt;&lt;/Button&gt;
-                </code>
+                <i className="fa fa-align-justify"></i> Advertisement Table
               </CardHeader>
               <CardBody>
-                <h6>Size Small
-                  <small> Add this class <code>.btn-sm</code></small>
-                </h6>
-                <p>
-                  <Button size="sm" className="btn-facebook btn-brand mr-1 mb-1"><i className="fa fa-facebook"></i><span>Facebook</span></Button>
-                  <Button size="sm" className="btn-twitter btn-brand mr-1 mb-1"><i className="fa fa-twitter"></i><span>Twitter</span></Button>
-                  <Button size="sm" className="btn-linkedin btn-brand mr-1 mb-1"><i className="fa fa-linkedin"></i><span>LinkedIn</span></Button>
-                  <Button size="sm" className="btn-flickr btn-brand mr-1 mb-1"><i className="fa fa-flickr"></i><span>Flickr</span></Button>
-                  <Button size="sm" className="btn-tumblr btn-brand mr-1 mb-1"><i className="fa fa-tumblr"></i><span>Tumblr</span></Button>
-                  <Button size="sm" className="btn-xing btn-brand mr-1 mb-1"><i className="fa fa-xing"></i><span>Xing</span></Button>
-                  <Button size="sm" className="btn-github btn-brand mr-1 mb-1"><i className="fa fa-github"></i><span>Github</span></Button>
-                  <Button size="sm" className="btn-html5 btn-brand mr-1 mb-1"><i className="fa fa-html5"></i><span>HTML5</span></Button>
-                  <Button size="sm" className="btn-openid btn-brand mr-1 mb-1"><i className="fa fa-openid"></i><span>OpenID</span></Button>
-                  <Button size="sm" className="btn-stack-overflow btn-brand mr-1 mb-1"><i className="fa fa-stack-overflow"></i><span>StackOverflow</span></Button>
-                  <Button size="sm" className="btn-css3 btn-brand mr-1 mb-1"><i className="fa fa-css3"></i><span>CSS3</span></Button>
-                  <Button size="sm" className="btn-youtube btn-brand mr-1 mb-1"><i className="fa fa-youtube"></i><span>YouTube</span></Button>
-                  <Button size="sm" className="btn-dribbble btn-brand mr-1 mb-1"><i className="fa fa-dribbble"></i><span>Dribbble</span></Button>
-                  <Button size="sm" className="btn-google-plus btn-brand mr-1 mb-1"><i className="fa fa-google-plus"></i><span>Google+</span></Button>
-                  <Button size="sm" className="btn-instagram btn-brand mr-1 mb-1"><i className="fa fa-instagram"></i><span>Instagram</span></Button>
-                  <Button size="sm" className="btn-pinterest btn-brand mr-1 mb-1"><i className="fa fa-pinterest"></i><span>Pinterest</span></Button>
-                  <Button size="sm" className="btn-vk btn-brand mr-1 mb-1"><i className="fa fa-vk"></i><span>VK</span></Button>
-                  <Button size="sm" className="btn-yahoo btn-brand mr-1 mb-1"><i className="fa fa-yahoo"></i><span>Yahoo</span></Button>
-                  <Button size="sm" className="btn-behance btn-brand mr-1 mb-1"><i className="fa fa-behance"></i><span>Behance</span></Button>
-                  <Button size="sm" className="btn-dropbox btn-brand mr-1 mb-1"><i className="fa fa-dropbox"></i><span>Dropbox</span></Button>
-                  <Button size="sm" className="btn-reddit btn-brand mr-1 mb-1"><i className="fa fa-reddit"></i><span>Reddit</span></Button>
-                  <Button size="sm" className="btn-spotify btn-brand mr-1 mb-1"><i className="fa fa-spotify"></i><span>Spotify</span></Button>
-                  <Button size="sm" className="btn-vine btn-brand mr-1 mb-1"><i className="fa fa-vine"></i><span>Vine</span></Button>
-                  <Button size="sm" className="btn-foursquare btn-brand mr-1 mb-1"><i className="fa fa-foursquare"></i><span>Forsquare</span></Button>
-                  <Button size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><i className="fa fa-vimeo"></i><span>Vimeo</span></Button>
-                </p>
-                <h6>Size Normal</h6>
-                <p>
-                  <Button className="btn-facebook btn-brand mr-1 mb-1"><i className="fa fa-facebook"></i><span>Facebook</span></Button>
-                  <Button className="btn-twitter btn-brand mr-1 mb-1"><i className="fa fa-twitter"></i><span>Twitter</span></Button>
-                  <Button className="btn-linkedin btn-brand mr-1 mb-1"><i className="fa fa-linkedin"></i><span>LinkedIn</span></Button>
-                  <Button className="btn-flickr btn-brand mr-1 mb-1"><i className="fa fa-flickr"></i><span>Flickr</span></Button>
-                  <Button className="btn-tumblr btn-brand mr-1 mb-1"><i className="fa fa-tumblr"></i><span>Tumblr</span></Button>
-                  <Button className="btn-xing btn-brand mr-1 mb-1"><i className="fa fa-xing"></i><span>Xing</span></Button>
-                  <Button className="btn-github btn-brand mr-1 mb-1"><i className="fa fa-github"></i><span>Github</span></Button>
-                  <Button className="btn-html5 btn-brand mr-1 mb-1"><i className="fa fa-html5"></i><span>HTML5</span></Button>
-                  <Button className="btn-openid btn-brand mr-1 mb-1"><i className="fa fa-openid"></i><span>OpenID</span></Button>
-                  <Button className="btn-stack-overflow btn-brand mr-1 mb-1"><i className="fa fa-stack-overflow"></i><span>StackOverflow</span></Button>
-                  <Button className="btn-css3 btn-brand mr-1 mb-1"><i className="fa fa-css3"></i><span>CSS3</span></Button>
-                  <Button className="btn-youtube btn-brand mr-1 mb-1"><i className="fa fa-youtube"></i><span>YouTube</span></Button>
-                  <Button className="btn-dribbble btn-brand mr-1 mb-1"><i className="fa fa-dribbble"></i><span>Dribbble</span></Button>
-                  <Button className="btn-google-plus btn-brand mr-1 mb-1"><i className="fa fa-google-plus"></i><span>Google+</span></Button>
-                  <Button className="btn-instagram btn-brand mr-1 mb-1"><i className="fa fa-instagram"></i><span>Instagram</span></Button>
-                  <Button className="btn-pinterest btn-brand mr-1 mb-1"><i className="fa fa-pinterest"></i><span>Pinterest</span></Button>
-                  <Button className="btn-vk btn-brand mr-1 mb-1"><i className="fa fa-vk"></i><span>VK</span></Button>
-                  <Button className="btn-yahoo btn-brand mr-1 mb-1"><i className="fa fa-yahoo"></i><span>Yahoo</span></Button>
-                  <Button className="btn-behance btn-brand mr-1 mb-1"><i className="fa fa-behance"></i><span>Behance</span></Button>
-                  <Button className="btn-dropbox btn-brand mr-1 mb-1"><i className="fa fa-dropbox"></i><span>Dropbox</span></Button>
-                  <Button className="btn-reddit btn-brand mr-1 mb-1"><i className="fa fa-reddit"></i><span>Reddit</span></Button>
-                  <Button className="btn-spotify btn-brand mr-1 mb-1"><i className="fa fa-spotify"></i><span>Spotify</span></Button>
-                  <Button className="btn-vine btn-brand mr-1 mb-1"><i className="fa fa-vine"></i><span>Vine</span></Button>
-                  <Button className="btn-foursquare btn-brand mr-1 mb-1"><i className="fa fa-foursquare"></i><span>Forsquare</span></Button>
-                  <Button className="btn-vimeo btn-brand mr-1 mb-1"><i className="fa fa-vimeo"></i><span>Vimeo</span></Button>
-                </p>
-                <h6>Size Large
-                  <small> Add this class <code>.btn-lg</code></small>
-                </h6>
-                <p>
-                  <Button size="lg" className="btn-facebook btn-brand mr-1 mb-1"><i className="fa fa-facebook"></i><span>Facebook</span></Button>
-                  <Button size="lg" className="btn-twitter btn-brand mr-1 mb-1"><i className="fa fa-twitter"></i><span>Twitter</span></Button>
-                  <Button size="lg" className="btn-linkedin btn-brand mr-1 mb-1"><i className="fa fa-linkedin"></i><span>LinkedIn</span></Button>
-                  <Button size="lg" className="btn-flickr btn-brand mr-1 mb-1"><i className="fa fa-flickr"></i><span>Flickr</span></Button>
-                  <Button size="lg" className="btn-tumblr btn-brand mr-1 mb-1"><i className="fa fa-tumblr"></i><span>Tumblr</span></Button>
-                  <Button size="lg" className="btn-xing btn-brand mr-1 mb-1"><i className="fa fa-xing"></i><span>Xing</span></Button>
-                  <Button size="lg" className="btn-github btn-brand mr-1 mb-1"><i className="fa fa-github"></i><span>Github</span></Button>
-                  <Button size="lg" className="btn-html5 btn-brand mr-1 mb-1"><i className="fa fa-html5"></i><span>HTML5</span></Button>
-                  <Button size="lg" className="btn-openid btn-brand mr-1 mb-1"><i className="fa fa-openid"></i><span>OpenID</span></Button>
-                  <Button size="lg" className="btn-stack-overflow btn-brand mr-1 mb-1"><i className="fa fa-stack-overflow"></i><span>StackOverflow</span></Button>
-                  <Button size="lg" className="btn-css3 btn-brand mr-1 mb-1"><i className="fa fa-css3"></i><span>CSS3</span></Button>
-                  <Button size="lg" className="btn-youtube btn-brand mr-1 mb-1"><i className="fa fa-youtube"></i><span>YouTube</span></Button>
-                  <Button size="lg" className="btn-dribbble btn-brand mr-1 mb-1"><i className="fa fa-dribbble"></i><span>Dribbble</span></Button>
-                  <Button size="lg" className="btn-google-plus btn-brand mr-1 mb-1"><i className="fa fa-google-plus"></i><span>Google+</span></Button>
-                  <Button size="lg" className="btn-instagram btn-brand mr-1 mb-1"><i className="fa fa-instagram"></i><span>Instagram</span></Button>
-                  <Button size="lg" className="btn-pinterest btn-brand mr-1 mb-1"><i className="fa fa-pinterest"></i><span>Pinterest</span></Button>
-                  <Button size="lg" className="btn-vk btn-brand mr-1 mb-1"><i className="fa fa-vk"></i><span>VK</span></Button>
-                  <Button size="lg" className="btn-yahoo btn-brand mr-1 mb-1"><i className="fa fa-yahoo"></i><span>Yahoo</span></Button>
-                  <Button size="lg" className="btn-behance btn-brand mr-1 mb-1"><i className="fa fa-behance"></i><span>Behance</span></Button>
-                  <Button size="lg" className="btn-dropbox btn-brand mr-1 mb-1"><i className="fa fa-dropbox"></i><span>Dropbox</span></Button>
-                  <Button size="lg" className="btn-reddit btn-brand mr-1 mb-1"><i className="fa fa-reddit"></i><span>Reddit</span></Button>
-                  <Button size="lg" className="btn-spotify btn-brand mr-1 mb-1"><i className="fa fa-spotify"></i><span>Spotify</span></Button>
-                  <Button size="lg" className="btn-vine btn-brand mr-1 mb-1"><i className="fa fa-vine"></i><span>Vine</span></Button>
-                  <Button size="lg" className="btn-foursquare btn-brand mr-1 mb-1"><i className="fa fa-foursquare"></i><span>Forsquare</span></Button>
-                  <Button size="lg" className="btn-vimeo btn-brand mr-1 mb-1"><i className="fa fa-vimeo"></i><span>Vimeo</span></Button>
-                </p>
+                <Table responsive striped>
+                  <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Logo</th>
+                    <th>URL</th>
+                    <th>Status</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Yiorgos Avraamu</td>
+                    <td>2012/01/01</td>
+                    <td>Member</td>
+                    <td>
+                      <Badge color="success">Active</Badge>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Avram Tarasios</td>
+                    <td>2012/02/01</td>
+                    <td>Staff</td>
+                    <td>
+                      <Badge color="danger">Banned</Badge>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Quintin Ed</td>
+                    <td>2012/02/01</td>
+                    <td>Admin</td>
+                    <td>
+                      <Badge color="secondary">Inactive</Badge>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Enéas Kwadwo</td>
+                    <td>2012/03/01</td>
+                    <td>Member</td>
+                    <td>
+                      <Badge color="warning">Pending</Badge>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Agapetus Tadeáš</td>
+                    <td>2012/01/21</td>
+                    <td>Staff</td>
+                    <td>
+                      <Badge color="success">Active</Badge>
+                    </td>
+                  </tr>
+                  </tbody>
+                </Table>
+                <Pagination>
+                  <PaginationItem disabled><PaginationLink previous tag="button">Prev</PaginationLink></PaginationItem>
+                  <PaginationItem active>
+                    <PaginationLink tag="button">1</PaginationLink>
+                  </PaginationItem>
+                  <PaginationItem><PaginationLink tag="button">2</PaginationLink></PaginationItem>
+                  <PaginationItem><PaginationLink tag="button">3</PaginationLink></PaginationItem>
+                  <PaginationItem><PaginationLink tag="button">4</PaginationLink></PaginationItem>
+                  <PaginationItem><PaginationLink next tag="button">Next</PaginationLink></PaginationItem>
+                </Pagination>
               </CardBody>
             </Card>
           </Col>
+          {/* <Col>
+            <Card>
+              <CardHeader>
+              </CardHeader>
+              <CardBody>
+                <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
+                  <thead className="thead-light">
+                  <tr>
+                    <th className="text-center"><i className="icon-people"></i></th>
+                    <th>User</th>
+                    <th className="text-center">Country</th>
+                    <th>Usage</th>
+                    <th className="text-center">Payment Method</th>
+                    <th>Activity</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td className="text-center">
+                      <div className="avatar">
+                        <img src={'assets/img/avatars/1.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
+                        <span className="avatar-status badge-success"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Yiorgos Avraamu</div>
+                      <div className="small text-muted">
+                        <span>New</span> | Registered: Jan 1, 2015
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <i className="flag-icon flag-icon-us h4 mb-0" title="us" id="us"></i>
+                    </td>
+                    <td>
+                      <div className="clearfix">
+                        <div className="float-left">
+                          <strong>50%</strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <Progress className="progress-xs" color="success" value="50" />
+                    </td>
+                    <td className="text-center">
+                      <i className="fa fa-cc-mastercard" style={{ fontSize: 24 + 'px' }}></i>
+                    </td>
+                    <td>
+                      <div className="small text-muted">Last login</div>
+                      <strong>10 sec ago</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-center">
+                      <div className="avatar">
+                        <img src={'assets/img/avatars/2.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
+                        <span className="avatar-status badge-danger"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Avram Tarasios</div>
+                      <div className="small text-muted">
 
-          <Col xs="12">
-            <Card>
-              <CardHeader>
-                <i className="fa fa-align-justify"></i>
-                <strong>Brand Button</strong>
-                <small> Icons only. Usage ex. </small>
-                <code>
-                  &lt;Button className="btn-facebook btn-brand icon"&gt;&lt;i className="fa fa-facebook"&gt;&lt;/i&gt;&lt;/Button&gt;
-                </code>
-              </CardHeader>
-              <CardBody>
-                <h6>Size Small
-                  <small> Add this class <code>.btn-sm</code></small>
-                </h6>
-                <p>
-                  <Button size="sm" className="btn-facebook btn-brand icon mr-1 mb-1"><i className="fa fa-facebook"></i></Button>
-                  <Button size="sm" className="btn-twitter btn-brand icon mr-1 mb-1"><i className="fa fa-twitter"></i></Button>
-                  <Button size="sm" className="btn-linkedin btn-brand icon mr-1 mb-1"><i className="fa fa-linkedin"></i></Button>
-                  <Button size="sm" className="btn-flickr btn-brand icon mr-1 mb-1"><i className="fa fa-flickr"></i></Button>
-                  <Button size="sm" className="btn-tumblr btn-brand icon mr-1 mb-1"><i className="fa fa-tumblr"></i></Button>
-                  <Button size="sm" className="btn-xing btn-brand icon mr-1 mb-1"><i className="fa fa-xing"></i></Button>
-                  <Button size="sm" className="btn-github btn-brand icon mr-1 mb-1"><i className="fa fa-github"></i></Button>
-                  <Button size="sm" className="btn-html5 btn-brand icon mr-1 mb-1"><i className="fa fa-html5"></i></Button>
-                  <Button size="sm" className="btn-openid btn-brand icon mr-1 mb-1"><i className="fa fa-openid"></i></Button>
-                  <Button size="sm" className="btn-stack-overflow btn-brand icon mr-1 mb-1"><i className="fa fa-stack-overflow"></i></Button>
-                  <Button size="sm" className="btn-css3 btn-brand icon mr-1 mb-1"><i className="fa fa-css3"></i></Button>
-                  <Button size="sm" className="btn-youtube btn-brand icon mr-1 mb-1"><i className="fa fa-youtube"></i></Button>
-                  <Button size="sm" className="btn-dribbble btn-brand icon mr-1 mb-1"><i className="fa fa-dribbble"></i></Button>
-                  <Button size="sm" className="btn-google-plus btn-brand icon mr-1 mb-1"><i className="fa fa-google-plus"></i></Button>
-                  <Button size="sm" className="btn-instagram btn-brand icon mr-1 mb-1"><i className="fa fa-instagram"></i></Button>
-                  <Button size="sm" className="btn-pinterest btn-brand icon mr-1 mb-1"><i className="fa fa-pinterest"></i></Button>
-                  <Button size="sm" className="btn-vk btn-brand icon mr-1 mb-1"><i className="fa fa-vk"></i></Button>
-                  <Button size="sm" className="btn-yahoo btn-brand icon mr-1 mb-1"><i className="fa fa-yahoo"></i></Button>
-                  <Button size="sm" className="btn-behance btn-brand icon mr-1 mb-1"><i className="fa fa-behance"></i></Button>
-                  <Button size="sm" className="btn-dropbox btn-brand icon mr-1 mb-1"><i className="fa fa-dropbox"></i></Button>
-                  <Button size="sm" className="btn-reddit btn-brand icon mr-1 mb-1"><i className="fa fa-reddit"></i></Button>
-                  <Button size="sm" className="btn-spotify btn-brand icon mr-1 mb-1"><i className="fa fa-spotify"></i></Button>
-                  <Button size="sm" className="btn-vine btn-brand icon mr-1 mb-1"><i className="fa fa-vine"></i></Button>
-                  <Button size="sm" className="btn-foursquare btn-brand icon mr-1 mb-1"><i className="fa fa-foursquare"></i></Button>
-                  <Button size="sm" className="btn-vimeo btn-brand icon mr-1 mb-1"><i className="fa fa-vimeo"></i></Button>
-                </p>
-                <h6>Size Normal</h6>
-                <p>
-                  <Button className="btn-facebook btn-brand icon mr-1 mb-1"><i className="fa fa-facebook"></i></Button>
-                  <Button className="btn-twitter btn-brand icon mr-1 mb-1"><i className="fa fa-twitter"></i></Button>
-                  <Button className="btn-linkedin btn-brand icon mr-1 mb-1"><i className="fa fa-linkedin"></i></Button>
-                  <Button className="btn-flickr btn-brand icon mr-1 mb-1"><i className="fa fa-flickr"></i></Button>
-                  <Button className="btn-tumblr btn-brand icon mr-1 mb-1"><i className="fa fa-tumblr"></i></Button>
-                  <Button className="btn-xing btn-brand icon mr-1 mb-1"><i className="fa fa-xing"></i></Button>
-                  <Button className="btn-github btn-brand icon mr-1 mb-1"><i className="fa fa-github"></i></Button>
-                  <Button className="btn-html5 btn-brand icon mr-1 mb-1"><i className="fa fa-html5"></i></Button>
-                  <Button className="btn-openid btn-brand icon mr-1 mb-1"><i className="fa fa-openid"></i></Button>
-                  <Button className="btn-stack-overflow btn-brand icon mr-1 mb-1"><i className="fa fa-stack-overflow"></i></Button>
-                  <Button className="btn-css3 btn-brand icon mr-1 mb-1"><i className="fa fa-css3"></i></Button>
-                  <Button className="btn-youtube btn-brand icon mr-1 mb-1"><i className="fa fa-youtube"></i></Button>
-                  <Button className="btn-dribbble btn-brand icon mr-1 mb-1"><i className="fa fa-dribbble"></i></Button>
-                  <Button className="btn-google-plus btn-brand icon mr-1 mb-1"><i className="fa fa-google-plus"></i></Button>
-                  <Button className="btn-instagram btn-brand icon mr-1 mb-1"><i className="fa fa-instagram"></i></Button>
-                  <Button className="btn-pinterest btn-brand icon mr-1 mb-1"><i className="fa fa-pinterest"></i></Button>
-                  <Button className="btn-vk btn-brand icon mr-1 mb-1"><i className="fa fa-vk"></i></Button>
-                  <Button className="btn-yahoo btn-brand icon mr-1 mb-1"><i className="fa fa-yahoo"></i></Button>
-                  <Button className="btn-behance btn-brand icon mr-1 mb-1"><i className="fa fa-behance"></i></Button>
-                  <Button className="btn-dropbox btn-brand icon mr-1 mb-1"><i className="fa fa-dropbox"></i></Button>
-                  <Button className="btn-reddit btn-brand icon mr-1 mb-1"><i className="fa fa-reddit"></i></Button>
-                  <Button className="btn-spotify btn-brand icon mr-1 mb-1"><i className="fa fa-spotify"></i></Button>
-                  <Button className="btn-vine btn-brand icon mr-1 mb-1"><i className="fa fa-vine"></i></Button>
-                  <Button className="btn-foursquare btn-brand icon mr-1 mb-1"><i className="fa fa-foursquare"></i></Button>
-                  <Button className="btn-vimeo btn-brand icon mr-1 mb-1"><i className="fa fa-vimeo"></i></Button>
-                </p>
-                <h6>Size Large
-                  <small> Add this class <code>.btn-lg</code></small>
-                </h6>
-                <p>
-                  <Button size="lg" className="btn-facebook btn-brand icon mr-1 mb-1"><i className="fa fa-facebook"></i></Button>
-                  <Button size="lg" className="btn-twitter btn-brand icon mr-1 mb-1"><i className="fa fa-twitter"></i></Button>
-                  <Button size="lg" className="btn-linkedin btn-brand icon mr-1 mb-1"><i className="fa fa-linkedin"></i></Button>
-                  <Button size="lg" className="btn-flickr btn-brand icon mr-1 mb-1"><i className="fa fa-flickr"></i></Button>
-                  <Button size="lg" className="btn-tumblr btn-brand icon mr-1 mb-1"><i className="fa fa-tumblr"></i></Button>
-                  <Button size="lg" className="btn-xing btn-brand icon mr-1 mb-1"><i className="fa fa-xing"></i></Button>
-                  <Button size="lg" className="btn-github btn-brand icon mr-1 mb-1"><i className="fa fa-github"></i></Button>
-                  <Button size="lg" className="btn-html5 btn-brand icon mr-1 mb-1"><i className="fa fa-html5"></i></Button>
-                  <Button size="lg" className="btn-openid btn-brand icon mr-1 mb-1"><i className="fa fa-openid"></i></Button>
-                  <Button size="lg" className="btn-stack-overflow btn-brand icon mr-1 mb-1"><i className="fa fa-stack-overflow"></i></Button>
-                  <Button size="lg" className="btn-css3 btn-brand icon mr-1 mb-1"><i className="fa fa-css3"></i></Button>
-                  <Button size="lg" className="btn-youtube btn-brand icon mr-1 mb-1"><i className="fa fa-youtube"></i></Button>
-                  <Button size="lg" className="btn-dribbble btn-brand icon mr-1 mb-1"><i className="fa fa-dribbble"></i></Button>
-                  <Button size="lg" className="btn-google-plus btn-brand icon mr-1 mb-1"><i className="fa fa-google-plus"></i></Button>
-                  <Button size="lg" className="btn-instagram btn-brand icon mr-1 mb-1"><i className="fa fa-instagram"></i></Button>
-                  <Button size="lg" className="btn-pinterest btn-brand icon mr-1 mb-1"><i className="fa fa-pinterest"></i></Button>
-                  <Button size="lg" className="btn-vk btn-brand icon mr-1 mb-1"><i className="fa fa-vk"></i></Button>
-                  <Button size="lg" className="btn-yahoo btn-brand icon mr-1 mb-1"><i className="fa fa-yahoo"></i></Button>
-                  <Button size="lg" className="btn-behance btn-brand icon mr-1 mb-1"><i className="fa fa-behance"></i></Button>
-                  <Button size="lg" className="btn-dropbox btn-brand icon mr-1 mb-1"><i className="fa fa-dropbox"></i></Button>
-                  <Button size="lg" className="btn-reddit btn-brand icon mr-1 mb-1"><i className="fa fa-reddit"></i></Button>
-                  <Button size="lg" className="btn-spotify btn-brand icon mr-1 mb-1"><i className="fa fa-spotify"></i></Button>
-                  <Button size="lg" className="btn-vine btn-brand icon mr-1 mb-1"><i className="fa fa-vine"></i></Button>
-                  <Button size="lg" className="btn-foursquare btn-brand icon mr-1 mb-1"><i className="fa fa-foursquare"></i></Button>
-                  <Button size="lg" className="btn-vimeo btn-brand icon mr-1 mb-1"><i className="fa fa-vimeo"></i></Button>
-                </p>
+                        <span>Recurring</span> | Registered: Jan 1, 2015
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <i className="flag-icon flag-icon-br h4 mb-0" title="br" id="br"></i>
+                    </td>
+                    <td>
+                      <div className="clearfix">
+                        <div className="float-left">
+                          <strong>10%</strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <Progress className="progress-xs" color="info" value="10" />
+                    </td>
+                    <td className="text-center">
+                      <i className="fa fa-cc-visa" style={{ fontSize: 24 + 'px' }}></i>
+                    </td>
+                    <td>
+                      <div className="small text-muted">Last login</div>
+                      <strong>5 minutes ago</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-center">
+                      <div className="avatar">
+                        <img src={'assets/img/avatars/3.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
+                        <span className="avatar-status badge-warning"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Quintin Ed</div>
+                      <div className="small text-muted">
+                        <span>New</span> | Registered: Jan 1, 2015
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <i className="flag-icon flag-icon-in h4 mb-0" title="in" id="in"></i>
+                    </td>
+                    <td>
+                      <div className="clearfix">
+                        <div className="float-left">
+                          <strong>74%</strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <Progress className="progress-xs" color="warning" value="74" />
+                    </td>
+                    <td className="text-center">
+                      <i className="fa fa-cc-stripe" style={{ fontSize: 24 + 'px' }}></i>
+                    </td>
+                    <td>
+                      <div className="small text-muted">Last login</div>
+                      <strong>1 hour ago</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-center">
+                      <div className="avatar">
+                        <img src={'assets/img/avatars/4.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
+                        <span className="avatar-status badge-secondary"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Enéas Kwadwo</div>
+                      <div className="small text-muted">
+                        <span>New</span> | Registered: Jan 1, 2015
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <i className="flag-icon flag-icon-fr h4 mb-0" title="fr" id="fr"></i>
+                    </td>
+                    <td>
+                      <div className="clearfix">
+                        <div className="float-left">
+                          <strong>98%</strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <Progress className="progress-xs" color="danger" value="98" />
+                    </td>
+                    <td className="text-center">
+                      <i className="fa fa-paypal" style={{ fontSize: 24 + 'px' }}></i>
+                    </td>
+                    <td>
+                      <div className="small text-muted">Last login</div>
+                      <strong>Last month</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-center">
+                      <div className="avatar">
+                        <img src={'assets/img/avatars/5.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
+                        <span className="avatar-status badge-success"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Agapetus Tadeáš</div>
+                      <div className="small text-muted">
+                        <span>New</span> | Registered: Jan 1, 2015
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <i className="flag-icon flag-icon-es h4 mb-0" title="es" id="es"></i>
+                    </td>
+                    <td>
+                      <div className="clearfix">
+                        <div className="float-left">
+                          <strong>22%</strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <Progress className="progress-xs" color="info" value="22" />
+                    </td>
+                    <td className="text-center">
+                      <i className="fa fa-google-wallet" style={{ fontSize: 24 + 'px' }}></i>
+                    </td>
+                    <td>
+                      <div className="small text-muted">Last login</div>
+                      <strong>Last week</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-center">
+                      <div className="avatar">
+                        <img src={'assets/img/avatars/6.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
+                        <span className="avatar-status badge-danger"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Friderik Dávid</div>
+                      <div className="small text-muted">
+                        <span>New</span> | Registered: Jan 1, 2015
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <i className="flag-icon flag-icon-pl h4 mb-0" title="pl" id="pl"></i>
+                    </td>
+                    <td>
+                      <div className="clearfix">
+                        <div className="float-left">
+                          <strong>43%</strong>
+                        </div>
+                        <div className="float-right">
+                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <Progress className="progress-xs" color="success" value="43" />
+                    </td>
+                    <td className="text-center">
+                      <i className="fa fa-cc-amex" style={{ fontSize: 24 + 'px' }}></i>
+                    </td>
+                    <td>
+                      <div className="small text-muted">Last login</div>
+                      <strong>Yesterday</strong>
+                    </td>
+                  </tr>
+                  </tbody>
+                </Table>
               </CardBody>
             </Card>
-          </Col>
-
-          <Col xs="12">
-            <Card>
-              <CardHeader>
-                <i className="fa fa-align-justify"></i>
-                <strong>Brand Button</strong>
-                <small> Text only. Usage ex. </small>
-                <code>
-                  &lt;Button className="btn-facebook btn-brand text"&gt;&lt;span&gt;Facebook&lt;/span&gt;&lt;/Button&gt;
-                </code>
-              </CardHeader>
-              <CardBody>
-                <h6>Size Small
-                  <small> Add this class <code>.btn-sm</code></small>
-                </h6>
-                <p>
-                  <Button size="sm" className="btn-facebook btn-brand text mr-1 mb-1"><span>Facebook</span></Button>
-                  <Button size="sm" className="btn-twitter btn-brand text mr-1 mb-1"><span>Twitter</span></Button>
-                  <Button size="sm" className="btn-linkedin btn-brand text mr-1 mb-1"><span>LinkedIn</span></Button>
-                  <Button size="sm" className="btn-flickr btn-brand text mr-1 mb-1"><span>Flickr</span></Button>
-                  <Button size="sm" className="btn-tumblr btn-brand text mr-1 mb-1"><span>Tumblr</span></Button>
-                  <Button size="sm" className="btn-xing btn-brand text mr-1 mb-1"><span>Xing</span></Button>
-                  <Button size="sm" className="btn-github btn-brand text mr-1 mb-1"><span>Github</span></Button>
-                  <Button size="sm" className="btn-html5 btn-brand text mr-1 mb-1"><span>HTML5</span></Button>
-                  <Button size="sm" className="btn-openid btn-brand text mr-1 mb-1"><span>OpenID</span></Button>
-                  <Button size="sm" className="btn-stack-overflow btn-brand text mr-1 mb-1"><span>StackOverflow</span></Button>
-                  <Button size="sm" className="btn-css3 btn-brand text mr-1 mb-1"><span>CSS3</span></Button>
-                  <Button size="sm" className="btn-youtube btn-brand text mr-1 mb-1"><span>YouTube</span></Button>
-                  <Button size="sm" className="btn-dribbble btn-brand text mr-1 mb-1"><span>Dribbble</span></Button>
-                  <Button size="sm" className="btn-google-plus btn-brand text mr-1 mb-1"><span>Google+</span></Button>
-                  <Button size="sm" className="btn-instagram btn-brand text mr-1 mb-1"><span>Instagram</span></Button>
-                  <Button size="sm" className="btn-pinterest btn-brand text mr-1 mb-1"><span>Pinterest</span></Button>
-                  <Button size="sm" className="btn-vk btn-brand text mr-1 mb-1"><span>VK</span></Button>
-                  <Button size="sm" className="btn-yahoo btn-brand text mr-1 mb-1"><span>Yahoo</span></Button>
-                  <Button size="sm" className="btn-behance btn-brand text mr-1 mb-1"><span>Behance</span></Button>
-                  <Button size="sm" className="btn-dropbox btn-brand text mr-1 mb-1"><span>Dropbox</span></Button>
-                  <Button size="sm" className="btn-reddit btn-brand text mr-1 mb-1"><span>Reddit</span></Button>
-                  <Button size="sm" className="btn-spotify btn-brand text mr-1 mb-1"><span>Spotify</span></Button>
-                  <Button size="sm" className="btn-vine btn-brand text mr-1 mb-1"><span>Vine</span></Button>
-                  <Button size="sm" className="btn-foursquare btn-brand text mr-1 mb-1"><span>Forsquare</span></Button>
-                  <Button size="sm" className="btn-vimeo btn-brand text mr-1 mb-1"><span>Vimeo</span></Button>
-                </p>
-                <h6>Size Normal</h6>
-                <p>
-                  <Button className="btn-facebook btn-brand text mr-1 mb-1"><span>Facebook</span></Button>
-                  <Button className="btn-twitter btn-brand text mr-1 mb-1"><span>Twitter</span></Button>
-                  <Button className="btn-linkedin btn-brand text mr-1 mb-1"><span>LinkedIn</span></Button>
-                  <Button className="btn-flickr btn-brand text mr-1 mb-1"><span>Flickr</span></Button>
-                  <Button className="btn-tumblr btn-brand text mr-1 mb-1"><span>Tumblr</span></Button>
-                  <Button className="btn-xing btn-brand text mr-1 mb-1"><span>Xing</span></Button>
-                  <Button className="btn-github btn-brand text mr-1 mb-1"><span>Github</span></Button>
-                  <Button className="btn-html5 btn-brand text mr-1 mb-1"><span>HTML5</span></Button>
-                  <Button className="btn-openid btn-brand text mr-1 mb-1"><span>OpenID</span></Button>
-                  <Button className="btn-stack-overflow btn-brand text mr-1 mb-1"><span>StackOverflow</span></Button>
-                  <Button className="btn-css3 btn-brand text mr-1 mb-1"><span>CSS3</span></Button>
-                  <Button className="btn-youtube btn-brand text mr-1 mb-1"><span>YouTube</span></Button>
-                  <Button className="btn-dribbble btn-brand text mr-1 mb-1"><span>Dribbble</span></Button>
-                  <Button className="btn-google-plus btn-brand text mr-1 mb-1"><span>Google+</span></Button>
-                  <Button className="btn-instagram btn-brand text mr-1 mb-1"><span>Instagram</span></Button>
-                  <Button className="btn-pinterest btn-brand text mr-1 mb-1"><span>Pinterest</span></Button>
-                  <Button className="btn-vk btn-brand text mr-1 mb-1"><span>VK</span></Button>
-                  <Button className="btn-yahoo btn-brand text mr-1 mb-1"><span>Yahoo</span></Button>
-                  <Button className="btn-behance btn-brand text mr-1 mb-1"><span>Behance</span></Button>
-                  <Button className="btn-dropbox btn-brand text mr-1 mb-1"><span>Dropbox</span></Button>
-                  <Button className="btn-reddit btn-brand text mr-1 mb-1"><span>Reddit</span></Button>
-                  <Button className="btn-spotify btn-brand text mr-1 mb-1"><span>Spotify</span></Button>
-                  <Button className="btn-vine btn-brand text mr-1 mb-1"><span>Vine</span></Button>
-                  <Button className="btn-foursquare btn-brand text mr-1 mb-1"><span>Forsquare</span></Button>
-                  <Button className="btn-vimeo btn-brand text mr-1 mb-1"><span>Vimeo</span></Button>
-                </p>
-                <h6>Size Large
-                  <small> Add this class <code>.btn-lg</code></small>
-                </h6>
-                <p>
-                  <Button size="lg" className="btn-facebook btn-brand text mr-1 mb-1"><span>Facebook</span></Button>
-                  <Button size="lg" className="btn-twitter btn-brand text mr-1 mb-1"><span>Twitter</span></Button>
-                  <Button size="lg" className="btn-linkedin btn-brand text mr-1 mb-1"><span>LinkedIn</span></Button>
-                  <Button size="lg" className="btn-flickr btn-brand text mr-1 mb-1"><span>Flickr</span></Button>
-                  <Button size="lg" className="btn-tumblr btn-brand text mr-1 mb-1"><span>Tumblr</span></Button>
-                  <Button size="lg" className="btn-xing btn-brand text mr-1 mb-1"><span>Xing</span></Button>
-                  <Button size="lg" className="btn-github btn-brand text mr-1 mb-1"><span>Github</span></Button>
-                  <Button size="lg" className="btn-html5 btn-brand text mr-1 mb-1"><span>HTML5</span></Button>
-                  <Button size="lg" className="btn-openid btn-brand text mr-1 mb-1"><span>OpenID</span></Button>
-                  <Button size="lg" className="btn-stack-overflow btn-brand text mr-1 mb-1"><span>StackOverflow</span></Button>
-                  <Button size="lg" className="btn-css3 btn-brand text mr-1 mb-1"><span>CSS3</span></Button>
-                  <Button size="lg" className="btn-youtube btn-brand text mr-1 mb-1"><span>YouTube</span></Button>
-                  <Button size="lg" className="btn-dribbble btn-brand text mr-1 mb-1"><span>Dribbble</span></Button>
-                  <Button size="lg" className="btn-google-plus btn-brand text mr-1 mb-1"><span>Google+</span></Button>
-                  <Button size="lg" className="btn-instagram btn-brand text mr-1 mb-1"><span>Instagram</span></Button>
-                  <Button size="lg" className="btn-pinterest btn-brand text mr-1 mb-1"><span>Pinterest</span></Button>
-                  <Button size="lg" className="btn-vk btn-brand text mr-1 mb-1"><span>VK</span></Button>
-                  <Button size="lg" className="btn-yahoo btn-brand text mr-1 mb-1"><span>Yahoo</span></Button>
-                  <Button size="lg" className="btn-behance btn-brand text mr-1 mb-1"><span>Behance</span></Button>
-                  <Button size="lg" className="btn-dropbox btn-brand text mr-1 mb-1"><span>Dropbox</span></Button>
-                  <Button size="lg" className="btn-reddit btn-brand text mr-1 mb-1"><span>Reddit</span></Button>
-                  <Button size="lg" className="btn-spotify btn-brand text mr-1 mb-1"><span>Spotify</span></Button>
-                  <Button size="lg" className="btn-vine btn-brand text mr-1 mb-1"><span>Vine</span></Button>
-                  <Button size="lg" className="btn-foursquare btn-brand text mr-1 mb-1"><span>Forsquare</span></Button>
-                  <Button size="lg" className="btn-vimeo btn-brand text mr-1 mb-1"><span>Vimeo</span></Button>
-                </p>
-              </CardBody>
-            </Card>
-          </Col>
+          </Col> */}
         </Row>
       </div>
-
-    );
+    )
   }
 }
 
-export default BrandButtons;
+export default BrandButton ;

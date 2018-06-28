@@ -1,5 +1,5 @@
-import { Advertisement } from './Advertisement'
-
+import { Advertisement, NewAdvertisement } from './Advertisement'
+import { Donation } from './Donation'
 import {
   Breadcrumbs,
   Cards,
@@ -31,6 +31,8 @@ import Widgets from './Widgets';
 
 export {
   Advertisement,
+  NewAdvertisement,
+  Donation,
   Badges,
   Typography,
   Colors,

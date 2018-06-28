@@ -3,14 +3,25 @@ import Loadable from 'react-loadable'
 
 import DefaultLayout from './containers/DefaultLayout';
 
+
 function Loading() {
   return <div>Loading...</div>;
 }
+
+// const Donation = Loadable({
+//   loader: () => import('./views/Donation'),
+//   loading: Loading,
+// })
 
 const Advertisement = Loadable({
   loader: () => import('./views/Advertisement'),
   loading: Loading,
 });
+
+const NewAdvertisement = Loadable ({
+  loader: () => import('./views/Advertisement'),
+  loading: Loading,
+})
 
 const Breadcrumbs = Loadable({
   loader: () => import('./views/Base/Breadcrumbs'),
@@ -192,7 +203,9 @@ const User = Loadable({
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
-  { path: '/advertisement', name: 'Advertisement', component: Advertisement},
+  { path: '/advertisement/advertisement', name: 'Advertisement', component: Advertisement},
+  { path: '/advertisement/newAdvertisement', name: 'NewAdvertisement', component: NewAdvertisement},
+  //{ path: '/donation/manageDonation', name: 'ManageDonation', component: Donation},
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/theme', exact: true, name: 'Theme', component: Colors },
   { path: '/theme/colors', name: 'Colors', component: Colors },
