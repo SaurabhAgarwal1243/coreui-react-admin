@@ -45,8 +45,11 @@ class ButtonDropdowns extends Component {
     
     axios
     .post('../BrandButtons/BrandButtons.js',{
-      
+      Name: this.state.Name,
+      URL: this.state.URL,
+      Status: this.state.Status
     })
+    
   }
 
 
